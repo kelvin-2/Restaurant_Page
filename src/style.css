@@ -1,4 +1,66 @@
-body{
+body {
     background-color: #212121;
-    color:white;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+header {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; /* Bold */
+    background-color: #343434;
+    padding: 15px 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 40px;
+}
+
+/* Primary Button */
+nav ul li button {
+    background-color: #FFD700; /* Gold */
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover State */
+nav ul li button:hover {
+    background-color: #FFC107; /* Softer Gold */
+    transform: scale(1.05); /* Slight Zoom Effect */
+}
+
+/* Active State */
+nav ul li button:active {
+    background-color: #E6AC00; /* Deeper Gold */
+}
+
+/* Optional: Alternative Black Button */
+nav ul li.black-button {
+    background-color: #212121; /* Black */
+    color: #FFD700; /* Gold Text */
+    border: 2px solid #FFD700;
+}
+
+nav ul li.black-button:hover {
+    background-color: #343434; /* Slightly lighter black */
 }
