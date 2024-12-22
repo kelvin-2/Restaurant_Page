@@ -30,7 +30,7 @@ body::before {
 header {
     font-family: 'Roboto', sans-serif;
     font-weight: 700; /* Bold */
-    background-color: #343434;
+    background-color: #ffffff;
     padding: 15px 20px;
     color: white;
     display: flex;
@@ -51,8 +51,8 @@ nav ul {
 
 /* Primary Button */
 nav ul li button {
-    background-color: #FFD700; /* Gold */
-    color: black;
+    background-color: black; /* Gold */
+    color:whitesmoke;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
