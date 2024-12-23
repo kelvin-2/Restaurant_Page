@@ -64,8 +64,7 @@ export function loadContact() {
 
     // Add phone link
     const phoneLink = document.createElement("a");
-    phoneLink.href = "tel:+1234567890";
-    phoneLink.textContent = "+1 (234) 567-890";
+    phoneLink.textContent = "tel:+27 123 567 890";
     address.appendChild(phoneLink);
 
     // Append the address to the addressDiv

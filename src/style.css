@@ -280,9 +280,10 @@ a:hover {
 }
 
 .contact-page .title {
-    color: #FFD700;
+    color: #dfdccf;
     font-size: 3rem;
-    font-weight: bold;
+    font-weight:bold;
+    font-family: cursive;
 
     margin-bottom: 20px;
 }
@@ -305,9 +306,9 @@ a:hover {
 }
 
 .contact-page a {
-    color: #FFD700;
+    color:whitesmoke;
     text-decoration: none;
-    font-weight: bold;
+   
 }
 
 .contact-page a:hover {
