@@ -30,6 +30,7 @@ const menuData={
         {name:'Salad',price:12.00},
         {name:'Brownies',price:10.00},
         {name:'Chocolate Muffin',price:14.00},
+        {name:'Burger',price:30.00}
     ]
 }
 
