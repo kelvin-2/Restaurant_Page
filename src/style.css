@@ -11,6 +11,11 @@ body {
     padding: 0; /* Removes default padding */
     position: relative; /* Allows absolute positioning of overlay */
 }
+#content.menu {
+    background-color: #EDBB70; /* Light gray for the menu */
+    color: #ffffff; /* Dark text for readability */
+    padding: 20px;
+}
 
 body::before {
     content: "";
@@ -81,4 +86,101 @@ nav ul li.black-button {
 
 nav ul li.black-button:hover {
     background-color: #343434; /* Slightly lighter black */
+}
+/*menu setting */
+#content.menu-page {
+    background-color: #212121;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    color: #FFD700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.cafe-name {
+    color: #FFC107;
+    font-size: 1.5rem;
+}
+
+/* Two-column layout */
+.menu-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* Vertical divider */
+.menu-divider {
+    background: linear-gradient(to bottom, transparent, #FFD700, transparent);
+    height: 100%;
+    width: 2px;
+    margin: 0 1rem;
+}
+
+/* Left and right menu columns */
+.menu-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-category {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.menu-category h2 {
+    color: #FFD700;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.1);
+}
+
+.item-name {
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.item-price {
+    color: #FFC107;
+    font-weight: 500;
+}
+
+/* Media query for mobile */
+@media (max-width: 768px) {
+    .menu-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-divider {
+        display: none;
+    }
 }

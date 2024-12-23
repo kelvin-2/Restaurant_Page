@@ -31,19 +31,19 @@ const menuData={
         {name:'Brownies',price:10.00},
         {name:'Chocolate Muffin',price:14.00},
     ]
-    
 }
 
 export function loadMenu() {
     const content = document.querySelector('#content');
-    content.innerHTML = ''; //clear previous page 
+    content.innerHTML = '';
+    content.className = 'menu-page';
 
     const headerDiv = document.createElement("div");
     headerDiv.className = "header";
     
     const sectionTitle = document.createElement("h1");
     sectionTitle.className = "section-title";
-    sectionTitle.textContent = "Menu";
+    sectionTitle.textContent = "Our Menu";
     
     const cafeNameDiv = document.createElement("div"); 
     cafeNameDiv.className = "cafe-name";
@@ -53,11 +53,19 @@ export function loadMenu() {
     headerDiv.appendChild(cafeNameDiv);
     content.appendChild(headerDiv);
 
-    // Create menu section
     const menuSection = document.createElement("div");
     menuSection.className = "menu-section";
 
-    // Emoji mapping for each category
+    // Create left and right columns
+    const leftColumn = document.createElement("div");
+    leftColumn.className = "menu-column";
+    
+    const divider = document.createElement("div");
+    divider.className = "menu-divider";
+    
+    const rightColumn = document.createElement("div");
+    rightColumn.className = "menu-column";
+
     const categoryEmojis = {
         coffee: "☕",
         nonCoffee: "🥤",
@@ -66,18 +74,20 @@ export function loadMenu() {
         food: "🍽️"
     };
 
-    // Loop through each category in menuData
-    for (const [category, items] of Object.entries(menuData)) {
+    // Split menu items between columns
+    const categories = Object.entries(menuData);
+    const midPoint = Math.ceil(categories.length / 2);
+
+    categories.forEach((entry, index) => {
+        const [category, items] = entry;
         const categoryDiv = document.createElement("div");
         categoryDiv.className = "menu-category";
         
-        // Add category title with emoji
         const categoryTitle = document.createElement("h2");
-        const emoji = categoryEmojis[category] || ""; // Get emoji or empty string if not found
+        const emoji = categoryEmojis[category] || "";
         const formattedCategory = category.charAt(0).toUpperCase() + category.slice(1);
         categoryTitle.textContent = `${emoji} ${formattedCategory}`;
-        categoryDiv.appendChild(categoryTitle);
-
+        
         const itemsList = document.createElement("div");
         itemsList.className = "menu-items";
 
@@ -91,16 +101,26 @@ export function loadMenu() {
 
             const itemPrice = document.createElement("span");
             itemPrice.className = "item-price";
-            itemPrice.textContent = `$${item.price.toFixed(2)}`;
+            itemPrice.textContent = `R${item.price.toFixed(2)}`;
 
             itemDiv.appendChild(itemName);
             itemDiv.appendChild(itemPrice);
             itemsList.appendChild(itemDiv);
         });
 
+        categoryDiv.appendChild(categoryTitle);
         categoryDiv.appendChild(itemsList);
-        menuSection.appendChild(categoryDiv);
-    }
+        
+        // Add to appropriate column
+        if (index < midPoint) {
+            leftColumn.appendChild(categoryDiv);
+        } else {
+            rightColumn.appendChild(categoryDiv);
+        }
+    });
 
+    menuSection.appendChild(leftColumn);
+    menuSection.appendChild(divider);
+    menuSection.appendChild(rightColumn);
     content.appendChild(menuSection);
 }
